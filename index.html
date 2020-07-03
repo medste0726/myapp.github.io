@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JQM Practice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
+    />
+    <link rel="stylesheet" href="css/colors.min.css" />
+    <link rel="stylesheet" href="css/stylesheet.css" />
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  </head>
+
+  <body>
+    <section data-role="page" id="pgWelcome" data-theme="d">
+      <div class="bg-image">
+        <header data-role="header" data-position="fixed">
+          <h1>Welcome!</h1>
+        </header>
+        <article role="main" class="ui-content">
+          <h2 id="h2-welcome">
+            CBDB lets you catalouge all your comics, let's get started!
+          </h2>
+          <div class="main-button">
+            <a href="#pgLogIn" data-role="button" data-transition="flip" data-direction="reverse">Log In</a>
+            <a href="#pgSignUp" data-role="button">Sign Up</a>
+          </div>
+        </article>
+        <footer data-role="footer" data-position="fixed">
+          <h4>Copywrite 2020 &copy;</h4>
+        </footer>
+      </div>
+    </section>
+
+    <section data-role="page" id="pgLogIn" data-theme="d">
+      <header data-role="header" data-position="fixed" data-add-back-btn="true">
+        <h1>Log In Page</h1>
+      </header>
+      <article role="main" class="ui-content">
+        <form id="fmLogIn">
+          <label for="inEmailLogIn">Email</label><input type="email" required name="inEmailLogIn" id="inEmailLogIn">
+          <label for="inPasswordLogIn">Password</label><input type="password" required name="inPasswordLogIn" id="inPasswordLogIn">
+          <input type="submit" value="Log In">
+          <input type="reset" value="Clear All">
+        </form>
+        <a href="#pgHome" data-role="button" data-transition="flow">Temp Button to go Home</a>
+        <!--jQM powered feedback messages-->
+        <div data-role="popup" class="ui-content" id="popErrorLogInIncorrect">Incorrect Password!</div>
+        <div data-role="popup" class="ui-content" id="popErrorLogInNotExists">Account doesn't exist!</div>
+        <div data-role="popup" class="ui-content" id="popErrorLogInTooMany">Too many attempts!</div>
+        <div data-role="popup" class="ui-content" id="popErrorLogInForgot">Forgot Password?</div>
+      </article>
+      <footer data-role="footer" data-position="fixed">
+        <h4>Copywrite 2020 &copy;</h4>
+      </footer>
+    </section>
+
+    <section data-role="page" id="pgSignUp" data-theme="d">
+      <header data-role="header" data-position="fixed" data-add-back-btn="true">
+        <h1>Sign Up Page</h1>
+      </header>
+      <article role="main" class="ui-content">
+        <form id="fmSignUp">
+          <label for="inEmailSignUp">Email</label><input type="email" required name="inEmailSignUp" id="inEmailSignUp">
+          <label for="inPasswordSignUp">Password</label><input type="password" required name="inPasswordSignUp" id="inPasswordSignUp">
+          <label for="inPasswordConfirmSignUp">Confirm Password</label><input type="text" required name="inPasswordConfirmSignUp" id="inPasswordConfirmSignUp">
+          <input type="submit" value="Create Account" data-icon="action">
+          <input type="reset" value="Clear All" data-icon="refresh">
+        </form>
+        <!--jQM powered feedback messages-->
+        <div data-role="popup" class="ui-content" id="popErrorSignUpMissmatch">Password doesn't match!</div>
+        <div data-role="popup" class="ui-content" id="popErrorSignUpExists">Account already exists!</div>
+        <div data-role="popup" class="ui-content" id="popErrorSignUpWeak">Password must contain upper and lower case characters</div>
+        <div data-role="popup" class="ui-content" id="popSuccessSignUp">Your account was created!</div>
+      </article>
+      <footer data-role="footer" data-position="fixed">
+        <h4>Copywrite 2020 &copy;</h4>
+      </footer>
+    </section>
+
+    <section data-role="page" id="pgHome" data-theme="a">
+      <header data-role="header" data-position="fixed">
+        <h1>Home Page</h1>
+        <a href="#pgOptions" data-transition="pop" data-icon="gear" data-iconpos="notext" class="ui-btn-right">Options</a>
+        <nav data-role="navbar">
+          <ul>
+            <li><a href="#pgHome" data-icon="home">Home</a></li>
+            <li><a href="#pgSave" data-icon="arrow-u">Save</a></li>
+            <li><a href="#pgView" data-icon="bars">View</a></li>
+          </ul>
+        </nav>
+      </header>
+      <article role="main" class="ui-content">
+        <img src="css/images/homepage.jpg" alt="homepage" style="width: 100%;" />
+        <h2>
+          Lets get started!
+        </h2>
+        <p>
+          CBDB lets you customzie, categorize and visualize all your comics.
+          Happy reading!
+        </p>
+      </article>
+      <footer data-role="footer" data-position="fixed">
+        <h4>Copywrite 2020 &copy;</h4>
+      </footer>
+    </section>
+
+    <section data-role="page" id="pgSave" data-theme="a">
+      <header data-role="header" data-position="fixed">
+        <h1>Save Page</h1>
+        <a href="#pgOptions" data-transition="pop" data-icon="gear" data-iconpos="notext" class="ui-btn-right">Options</a>
+        <nav data-role="navbar">
+          <ul>
+            <li><a href="#pgHome" data-icon="home">Home</a></li>
+            <li><a href="#pgSave" data-icon="arrow-u">Save</a></li>
+            <li><a href="#pgView" data-icon="bars">View</a></li>
+          </ul>
+        </nav>
+      </header>
+      <article role="main" class="ui-content">
+        <form id="fmSaveComic">
+          <fieldset>
+            <legend>Required</legend>
+            <label for="inTitleSave">Title</label><input type="text" required name="inTitleSave" id="inTitleSave">
+            <label for="inNumberSave">Number</label><input type="number" required name="inNumberSave" id="inNumberSave">
+            <label for="inYearSave">Year</label><input type="number" required name="inYearSave" id="inYearSave">
+          </fieldset>
+          <fieldset>
+            <legend>Optional</legend>
+            <label for="inPublisherSave">Publisher</label><input type="text" name="inPublisherSave" id="inPublisherSave">
+            <label for="inNotesSave">Notes</label><textarea name="inNotesSave" id="inNotesSave"></textarea>
+          </fieldset>
+          <input type="submit" value="Save">
+          <input type="reset" value="Clear">
+        </form>
+        <div data-role="popup" class="ui-content" id="popSucessSaveComicAdded">Comic Saved!</div>
+        <div data-role="popup" class="ui-content" id="popErrorSaveExists">This one already exists!</div>
+        </article>
+      </article>
+      <footer data-role="footer" data-position="fixed">
+        <h4>Copywrite 2020 &copy;</h4>
+      </footer>
+    </section>
+
+    <section data-role="page" id="pgView" data-theme="a">
+      <header data-role="header" data-position="fixed">
+        <h1>View Page</h1>
+        <a href="#pgOptions" data-transition="pop" data-icon="gear" data-iconpos="notext" class="ui-btn-right">Options</a>
+        <nav data-role="navbar">
+          <ul>
+            <li><a href="#pgHome" data-icon="home">Home</a></li>
+            <li><a href="#pgSave" data-icon="arrow-u">Save</a></li>
+            <li><a href="#pgView" data-icon="bars">View</a></li>
+          </ul>
+        </nav>
+      </header>
+      <article role="main" class="ui-content">
+        <div id="divViewComics">Comics go here</div>
+      </article>
+      <footer data-role="footer" data-position="fixed">
+        <h4>Copywrite 2020 &copy;</h4>
+      </footer>
+    </section>
+
+    <section data-role="page" id="pgOptions" data-theme="a">
+      <header data-role="header" data-position="fixed">
+        <h1>Options Page</h1>
+      </header>
+      <article role="main" class="ui-content">
+        <p>CDBD was made by Steven Medina by turning many cups of coffee into wonderful code.</p>
+        <a href="#pgWelcome" data-role="button" id="btnLogOut">Log Out</a>
+        <a href="#" data-role="button" id="btnDeleteCollection">Delete Collection</a>
+        <a href="#pgHome" data-role="button" data-icon="action"
+          >Go to Home Page</a
+        >
+      </article>
+      <footer data-role="footer" data-position="fixed">
+        <h4>Copywrite 2020 &copy;</h4>
+      </footer>
+    </section>
+  </body>
+</html>
